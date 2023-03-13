@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- 用于es6语法解析 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Hellojn extends React.Component {
+      render() {
+        return <div>
+                <h2>这是一个有状态组件</h2>
+                <p>姓名: {this.props.name}</p>
+                <p>性别: {this.props.sex}</p>
+                <p>年龄: {this.props.age}</p>
+                <p>擅长: 前端</p>
+                <p>经验: 10年</p>
+          </div>
+        }
+    }
+    ReactDOM.render(
+      <Hellojn name='jianan' sex='女' age='12' />,
+      document.getElementById('root')
+    )
+  </script>
+</body>
+</html>

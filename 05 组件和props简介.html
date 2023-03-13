@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- 用于es6语法解析 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="app1"></div>
+  <script type="text/babel">
+    // // 函数式组件
+    // function Hello() {
+    //   return <h1>Hello World</h1>
+    // }
+    function Hello() {
+      return <div>
+              <h1>这是一个函数式组件,是一个无状态组件</h1>
+                <p>姓名: 佳楠</p>
+                <p>年龄: 18</p>
+                <p>擅长: 前端</p>
+                <p>经验: 10年</p>
+            </div>
+    }
+    ReactDOM.render(
+      <Hello />,
+      document.getElementById('app1')
+    )
+  </script>
+</body>
+</html>

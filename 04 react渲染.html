@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- 用于es6语法解析 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <style>
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    function tick() {
+      let time = new Date().toLocaleTimeString()
+      // 我们写多个标签,这里需要注意的是一定要有一个根元素,必须要有父级
+      let template = <div>
+        <h1 className="red">Hello jianan</h1>
+        <h2>现在是: {time} </h2>
+      </div>
+      ReactDOM.render(
+        template,
+        document.getElementById('app')
+      )
+    }
+    tick() //能够渲染时间,但是是静止状态,并不能进行更新,所以要使用定时器让时间更新
+    setInterval(tick, 1)
+  </script>
+
+</body>
+
+</html>
