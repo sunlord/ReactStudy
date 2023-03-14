@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- 用于es6语法解析 -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    class Hello extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {
+          name: 'jianan',
+          age: 18
+        }
+      }
+      /* // 更新函数
+      updateInfo = () => {
+        this.setState({
+          name: 'hello',
+          age: 13
+        })
+      } */
+      updateInfo() {
+        this.setState({
+          name: 'hey',
+          age: 20
+        })
+      }
+
+      render() {
+        return <div>
+          <h1>这是一个有状态组件</h1>
+          <p>姓名: {this.state.name}</p>
+          <p>年龄: {this.state.age}</p>
+          <p>擅长: 前端</p>
+          <p>经验: 10年</p>
+          {/* <button onClick={this.updateInfo}>更新数据</button> */}
+          {/* <button onClick={() => this.updateInfo()}>更新数据</button> */}
+          <button onClick={this.updateInfo.bind(this)}>更新数据</button>
+        </div>
+      }
+    }
+    ReactDOM.render(
+      <Hello />,
+      document.getElementById('root')
+    )
+
+  </script>
+</body>
+
+</html>
